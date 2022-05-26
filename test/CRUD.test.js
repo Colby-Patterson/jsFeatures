@@ -1,4 +1,4 @@
-const {getInitTodos, addTodo, updateTodo} = require('../Homework/CRUD');
+const {getInitTodos, addTodo, updateTodo, removeTodo} = require('../Lectures/CRUD');
 
 it('test Read', ()=>{
     expect(getInitTodos().length).toBe(3)
@@ -15,6 +15,20 @@ it('test Create', ()=>{
 })
 
 it('test Update', ()=>{
+  //Go to a website and grab the todos
+  let todos = getInitTodos()
+  // Then we go to a form and create a new todo
+  
+  // update todo should return a new list of todos with the item
+  //complete toggled
+  let newTodos = updateTodo(todos, 1)
+  let newFirstTodo = newTodos[0]
+  let oldFirstTodo = todos[0]
+  expect(newFirstTodo.complete).toBe(true)
+  expect(oldFirstTodo.complete).toBe(false)
+})
+
+it('test Filter', ()=>{
   //Go to a website and grab the todos
   let todos = getInitTodos()
   // Then we go to a form and create a new todo

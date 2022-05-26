@@ -27,4 +27,8 @@ const updateTodo = (listOfTodos, id)=>{
 //     return t
 //   })
 }
-module.exports = { getInitTodos, addTodo, updateTodo }
+
+const removeTodo = (todosState, id)=>{
+  return todosState.filter((t)=> t.id !== id)
+}
+module.exports = { getInitTodos, addTodo, updateTodo, removeTodo }
