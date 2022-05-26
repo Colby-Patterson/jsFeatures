@@ -8,15 +8,17 @@ let todos = [{id: 1, complete: false, name: 'eat'},
 {id: 3, complete: false, name: 'code'}
 ];
 
-//READ
+//READ (will be done with API call)
 const getInitTodos = ()=>{
   return todos
 }
 
+// Get todo from form
 const addTodo = (listOfTodos, todo)=>{
   return [...listOfTodos, todo]
 }
 
+// Form or click event
 const updateTodo = (listOfTodos, id)=>{
   // map
   return listOfTodos.map((t)=>t.id === id ? {...t, complete: !t.complete} : t)
@@ -28,6 +30,7 @@ const updateTodo = (listOfTodos, id)=>{
 //   })
 }
 
+// click event on TODO to trigger this
 const removeTodo = (todosState, id)=>{
   return todosState.filter((t)=> t.id !== id)
 }
